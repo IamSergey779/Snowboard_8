@@ -1,6 +1,7 @@
 package Presenter
 
 import Domein.*
+import kotlin.system.exitProcess
 
 class Presenter(
     val listProduct: ListUseCase,
@@ -26,6 +27,9 @@ class Presenter(
             println("Please input name sell product")
             val sellName = readln().toString().lowercase()
             sellProduct.sellUseCase(sellName)
-        } else listOf()
+        } else {
+            println("Exit program!")
+            exitProcess(0)
+        }
     }
 }
